@@ -4,32 +4,32 @@ class_name UIManager
 # Manages all UI elements and displays game information
 # Follows Godot best practices for UI separation
 
-@onready var main_menu: VBoxContainer = $MainMenu
-@onready var game_ui: HBoxContainer = $GameUI
-@onready var pause_menu: VBoxContainer = $PauseMenu
-@onready var game_over_screen: VBoxContainer = $GameOverScreen
-@onready var level_complete_screen: VBoxContainer = $LevelCompleteScreen
-@onready var victory_screen: VBoxContainer = $VictoryScreen
+@onready var main_menu: VBoxContainer = get_node_or_null("MainMenu")
+@onready var game_ui: HBoxContainer = get_node_or_null("GameUI")
+@onready var pause_menu: VBoxContainer = get_node_or_null("PauseMenu")
+@onready var game_over_screen: VBoxContainer = get_node_or_null("GameOverScreen")
+@onready var level_complete_screen: VBoxContainer = get_node_or_null("LevelCompleteScreen")
+@onready var victory_screen: VBoxContainer = get_node_or_null("VictoryScreen")
 
-@onready var squad_count_label: Label = $GameUI/SquadCountLabel
-@onready var score_label: Label = $GameUI/ScoreLabel
-@onready var level_label: Label = $GameUI/LevelLabel
-@onready var progress_bar: ProgressBar = $GameUI/ProgressBar
+@onready var squad_count_label: Label = get_node_or_null("GameUI/SquadCountLabel")
+@onready var score_label: Label = get_node_or_null("GameUI/ScoreLabel")
+@onready var level_label: Label = get_node_or_null("GameUI/LevelLabel")
+@onready var progress_bar: ProgressBar = get_node_or_null("GameUI/ProgressBar")
 
-@onready var start_button: Button = $MainMenu/StartButton
-@onready var resume_button: Button = $PauseMenu/ResumeButton
-@onready var restart_button: Button = $PauseMenu/RestartButton
-@onready var menu_button: Button = $PauseMenu/MenuButton
+@onready var start_button: Button = get_node_or_null("MainMenu/StartButton")
+@onready var resume_button: Button = get_node_or_null("PauseMenu/ResumeButton")
+@onready var restart_button: Button = get_node_or_null("PauseMenu/RestartButton")
+@onready var menu_button: Button = get_node_or_null("PauseMenu/MenuButton")
 
-@onready var final_score_label: Label = $GameOverScreen/FinalScoreLabel
-@onready var restart_game_over_button: Button = $GameOverScreen/RestartButton
+@onready var final_score_label: Label = get_node_or_null("GameOverScreen/FinalScoreLabel")
+@onready var restart_game_over_button: Button = get_node_or_null("GameOverScreen/RestartButton")
 
-@onready var level_complete_label: Label = $LevelCompleteScreen/LevelCompleteLabel
-@onready var level_score_label: Label = $LevelCompleteScreen/LevelScoreLabel
-@onready var continue_button: Button = $LevelCompleteScreen/ContinueButton
+@onready var level_complete_label: Label = get_node_or_null("LevelCompleteScreen/LevelCompleteLabel")
+@onready var level_score_label: Label = get_node_or_null("LevelCompleteScreen/LevelScoreLabel")
+@onready var continue_button: Button = get_node_or_null("LevelCompleteScreen/ContinueButton")
 
-@onready var victory_score_label: Label = $VictoryScreen/VictoryScoreLabel
-@onready var play_again_button: Button = $VictoryScreen/PlayAgainButton
+@onready var victory_score_label: Label = get_node_or_null("VictoryScreen/VictoryScoreLabel")
+@onready var play_again_button: Button = get_node_or_null("VictoryScreen/PlayAgainButton")
 
 func _ready() -> void:
     _setup_ui()

@@ -22,9 +22,9 @@ enum StickmanState {
     DYING
 }
 
-@onready var sprite: Sprite2D = $Sprite2D
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+@onready var sprite: Sprite2D = get_node_or_null("Sprite2D")
+@onready var animation_player: AnimationPlayer = get_node_or_null("AnimationPlayer")
+@onready var collision_shape: CollisionShape2D = get_node_or_null("CollisionShape2D")
 
 func _ready() -> void:
     if sprite:

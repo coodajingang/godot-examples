@@ -22,10 +22,10 @@ enum ObstacleType {
     ZONE            # Damage zone (fire, poison, etc.)
 }
 
-@onready var sprite: Sprite2D = $Sprite2D
-@onready var collision_shape: CollisionShape2D = $CollisionShape2D
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var hurtbox: Area2D = $Hurtbox if has_node("Hurtbox") else null
+@onready var sprite: Sprite2D = get_node_or_null("Sprite2D")
+@onready var collision_shape: CollisionShape2D = get_node_or_null("CollisionShape2D")
+@onready var animation_player: AnimationPlayer = get_node_or_null("AnimationPlayer")
+@onready var hurtbox: Area2D = get_node_or_null("Hurtbox") if has_node("Hurtbox") else null
 
 var is_active: bool = true
 var movement_direction: Vector2 = Vector2.LEFT

@@ -18,11 +18,11 @@ enum MathOperation {
     DIVIDE
 }
 
-@onready var sprite: Sprite2D = $Sprite2D
-@onready var label: Label = $Label
-@onready var collision_shape: CollisionShape2D = $CollisionShape2D
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var glow_effect: PointLight2D = $PointLight2D
+@onready var sprite: Sprite2D = get_node_or_null("Sprite2D")
+@onready var label: Label = get_node_or_null("Label")
+@onready var collision_shape: CollisionShape2D = get_node_or_null("CollisionShape2D")
+@onready var animation_player: AnimationPlayer = get_node_or_null("AnimationPlayer")
+@onready var glow_effect: PointLight2D = get_node_or_null("PointLight2D")
 
 var is_activated: bool = false
 var cooldown_timer: float = 0.0

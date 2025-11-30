@@ -32,10 +32,11 @@ shape = SubResource("RectangleShape2D_1")
 
 [node name="Activate" type="Animation" parent="AnimationPlayer"]
 length = 0.5
+loop_mode = 0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/path = NodePath("../Sprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -47,7 +48,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Label:modulate")
+tracks/1/path = NodePath("../Label:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -59,10 +60,11 @@ tracks/1/keys = {
 
 [node name="Reset" type="Animation" parent="AnimationPlayer"]
 length = 0.3
+loop_mode = 0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/path = NodePath("../Sprite2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {

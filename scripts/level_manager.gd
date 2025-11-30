@@ -13,9 +13,9 @@ signal all_levels_completed()
 @export var obstacle_frequency: float = 0.3
 @export var base_difficulty: float = 1.0
 
-@onready var camera: Camera2D = $Camera2D
-@onready var ground: StaticBody2D = $Ground
-@onready var level_parent: Node2D = $LevelContent
+@onready var camera: Camera2D = get_node_or_null("Camera2D")
+@onready var ground: StaticBody2D = get_node_or_null("Ground")
+@onready var level_parent: Node2D = get_node_or_null("LevelContent")
 
 var current_level: int = 1
 var squad: StickmanSquad

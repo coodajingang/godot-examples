@@ -3,9 +3,9 @@ extends Node
 # Main game controller that orchestrates all systems
 # Manages game state, UI, and overall flow
 
-@onready var level_manager: LevelManager = $LevelManager
-@onready var ui_manager: Control = $UIManager
-@onready var squad: StickmanSquad = $StickmanSquad
+@onready var level_manager: LevelManager = get_node_or_null("LevelManager")
+@onready var ui_manager: Control = get_node_or_null("UIManager")
+@onready var squad: StickmanSquad = get_node_or_null("StickmanSquad")
 
 var is_game_paused: bool = false
 var game_state: GameState = GameState.MENU
