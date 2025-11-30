@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://final_verification"]
+
+[ext_resource type="Script" path="res://utils/final_verification.gd" id="1_final_verify"]
+
+[node name="FinalVerification" type="Node"]
+script = ExtResource("1_final_verify")
