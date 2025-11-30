@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://status1234"]
+
+[ext_resource type="Script" path="res://utils/quick_status_check.gd" id="1_status"]
+
+[node name="StatusChecker" type="Node"]
+script = ExtResource("1_status")
