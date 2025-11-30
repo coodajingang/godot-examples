@@ -14,14 +14,21 @@ func _ready() -> void:
 
 func _preload_textures() -> void:
     # Preload stickman texture
-    if ClassDB.class_exists("StickmanTexture"):
+    if ClassDB.class_exists("AdvancedTextureGenerator"):
+        stickman_base_texture = AdvancedTextureGenerator.create_detailed_stickman_texture()
+    elif ClassDB.class_exists("StickmanTexture"):
         stickman_base_texture = StickmanTexture.create_stickman_texture()
     else:
         # Create a simple fallback texture
         stickman_base_texture = _create_fallback_texture(Color.WHITE, 32, 48)
     
     # Preload gate textures
-    if ClassDB.class_exists("StickmanTexture"):
+    if ClassDB.class_exists("AdvancedTextureGenerator"):
+        gate_textures["add"] = AdvancedTextureGenerator.create_detailed_gate_texture("add")
+        gate_textures["subtract"] = AdvancedTextureGenerator.create_detailed_gate_texture("subtract")
+        gate_textures["multiply"] = AdvancedTextureGenerator.create_detailed_gate_texture("multiply")
+        gate_textures["divide"] = AdvancedTextureGenerator.create_detailed_gate_texture("divide")
+    elif ClassDB.class_exists("StickmanTexture"):
         gate_textures["add"] = StickmanTexture.create_gate_texture(Color.GREEN)
         gate_textures["subtract"] = StickmanTexture.create_gate_texture(Color.RED)
         gate_textures["multiply"] = StickmanTexture.create_gate_texture(Color.BLUE)
@@ -34,7 +41,12 @@ func _preload_textures() -> void:
         gate_textures["divide"] = _create_fallback_texture(Color.ORANGE, 80, 120)
     
     # Preload obstacle textures
-    if ClassDB.class_exists("StickmanTexture"):
+    if ClassDB.class_exists("AdvancedTextureGenerator"):
+        obstacle_textures["barrier"] = AdvancedTextureGenerator.create_detailed_obstacle_texture("barrier")
+        obstacle_textures["spike"] = AdvancedTextureGenerator.create_detailed_obstacle_texture("spike")
+        obstacle_textures["enemy"] = AdvancedTextureGenerator.create_detailed_obstacle_texture("enemy")
+        obstacle_textures["zone"] = AdvancedTextureGenerator.create_detailed_obstacle_texture("zone")
+    elif ClassDB.class_exists("StickmanTexture"):
         obstacle_textures["barrier"] = StickmanTexture.create_obstacle_texture("barrier")
         obstacle_textures["spike"] = StickmanTexture.create_obstacle_texture("spike")
         obstacle_textures["enemy"] = StickmanTexture.create_obstacle_texture("enemy")
@@ -43,6 +55,7 @@ func _preload_textures() -> void:
         obstacle_textures["barrier"] = _create_fallback_texture(Color.GRAY, 40, 40)
         obstacle_textures["spike"] = _create_fallback_texture(Color.DARK_GRAY, 40, 40)
         obstacle_textures["enemy"] = _create_fallback_texture(Color.RED, 40, 40)
+        obstacle_textures["zone"] = _create_fallback_texture(Color.ORANGE, 40, 40)
 
 func _create_fallback_texture(color: Color, width: int, height: int) -> ImageTexture:
     var image := Image.create(width, height, false, Image.FORMAT_RGBA8)
